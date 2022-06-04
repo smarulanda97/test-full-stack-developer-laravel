@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\v1\QuotationController;
-use App\Http\Controllers\Api\v1\UserController;
+use App\Http\Controllers\Api\v1\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['middleware' => 'cors'])->prefix('v1')->group(function() {
     Route::prefix('auth')->group(function () {
-        Route::post('/login', [UserController::class, 'login']);
-        Route::post('/logout', [UserController::class, 'logout']);
-        Route::post('/register', [UserController::class, 'register']);
+        Route::post('/login', [AuthController::class, 'login']);
+        Route::post('/logout', [AuthController::class, 'logout']);
+        Route::post('/register', [AuthController::class, 'register']);
     });
 
     Route::post('/quotations', [QuotationController::class, 'store']);
