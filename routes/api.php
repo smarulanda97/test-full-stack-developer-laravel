@@ -21,4 +21,6 @@ Route::middleware(['middleware' => 'cors'])->prefix('v1')->group(function() {
         Route::post('/logout', [UserController::class, 'logout']);
         Route::post('/register', [UserController::class, 'register']);
     });
+
+    Route::post('/quotations', [QuotationController::class, 'store']);
 });
