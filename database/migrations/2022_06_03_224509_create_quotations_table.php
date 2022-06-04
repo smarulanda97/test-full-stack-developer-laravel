@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
+            $table->string('age');
+            $table->string('currency_id');
+            $table->timestamp('start_date');
+            $table->timestamp('end_date');
+            $table->decimal('total');
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
