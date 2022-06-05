@@ -6,7 +6,7 @@ This repository contains code of the assessment for a full-stack developer posit
 
 This application is composed of an API (Backend) and APP (Frontend) within the same repository.
 
-The API is powered by Laravel and the APP with React.js
+The API is powered by Laravel and the APP by React.js
 
 You can find the API code distributed in the all folders of the Laravel application:
 - `app/*`
@@ -14,13 +14,14 @@ You can find the API code distributed in the all folders of the Laravel applicat
 - `test/*`
 - `resources/views/*`
 
-You can find the APP within the folder:
+You can find the APP within the following folder:
 - `/resources/js`
 
 ## Endpoints API
 
-- `/api/v1/user/login` Returns the access token that allows the access to private page. 
-- `/api/v1/user/logout` Invalidates the access token received.
+- `POST` `/api/v1/user/login` Returns the access token that allows the access to private page. 
+- `POST` `/api/v1/user/logout` Invalidates the access token received.
+- `POST` `/api/v1/quotation` Generates and stores a quotation.
  
 ## Endpoints APP
 
@@ -28,7 +29,7 @@ You can find the APP within the folder:
 - `/user/login`
 
 ## Installation process
-
+``
 The development server of this application is powered by Laravel Sail. To start the development server ensure you have 
 free the ports 8080 and 3306 in your local machine
 
@@ -37,7 +38,7 @@ free the ports 8080 and 3306 in your local machine
 - Generate JWT secret key: `./vendor/bin/sail artisan jwt:secret`
 - Generate certificate for JWT: `./vendor/bin/sail artisan jwt:generate-certs`
 - Run migrations: `./vendor/bin/sail artisan migrate`
-- Run fronted app `./vendor/bin/sail npm install && ./vendor/bin/sail npm run build`
+- Run fronted app `./vendor/bin/sail npm install && ./vendor/bin/sail npm run production`
 
 ## How to use the application (IMPORTANT!)
 
@@ -45,7 +46,7 @@ This application doesn't provide user registration, for that reason you can use 
 
 - `username:` airosoftware@test.com
 - `password:` 12345
-- `login page:` http://localhost/user/login
+- `login page:` http://localhost/user/login``
 
 ## App screenshots
 
