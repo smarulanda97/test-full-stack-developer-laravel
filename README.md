@@ -28,17 +28,22 @@ You can find the APP within the following folder:
 - `/`
 - `/user/login`
 
+## Server requirements
+
+- Docker
+
 ## Installation process
 ``
 The development server of this application is powered by Laravel Sail. To start the development server ensure you have 
 free the ports 8080 and 3306 in your local machine
 
-- Clone this repository and move to project folder: `git clone git@github.com:smarulanda97/test-full-stack-developer-laravel.git && cd test-full-stack-developer-laravel`
-- Start app server and database with laravel sail: `./vendor/bin/sail up -d`
-- Install composer dependencies: `./vendor/bin/sail composer install`
-- Generate JWT secret key: `./vendor/bin/sail artisan jwt:secret`
-- Generate certificate for JWT: `./vendor/bin/sail artisan jwt:generate-certs`
-- Run migrations: `./vendor/bin/sail artisan migrate`
+- Clone the repository and move to project's folder: `git clone git@github.com:smarulanda97/test-full-stack-developer-laravel.git && cd test-full-stack-developer-laravel`
+- Copy environment vars file: `cp .env.example .env`
+- Install composer dependencies from a docker: `docker run --rm -v $(pwd):/opt -u ${UID} -w /opt laravelsail/php81-composer:latest composer install`
+- Run server with laravel sail: `./vendor/bin/sail up -d`
+- Generate Laravel app key: `./vendor/bin/sail artisan key:generate`
+- Run Laravel migrations: `./vendor/bin/sail artisan migrate`
+- Install Laravel passport: `./vendor/bin/sail artisan passport:install`
 - Run database seeder: `./vendor/bin/sail artisan db:seed`
 - Run fronted app `./vendor/bin/sail npm install && ./vendor/bin/sail npm run production`
 
@@ -59,6 +64,10 @@ Login page `http://localhost/user/login`
 Main page `http://localhost`
 
 <p align="center"><img src="./.readme-statics/screen_main_page.png"></p>
+
+Results page `http://localhost`
+
+<p align="center"><img src="./.readme-statics/screen_results_page.png"></p>
 
 ## License
 
