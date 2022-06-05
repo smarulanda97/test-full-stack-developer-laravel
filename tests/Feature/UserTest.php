@@ -32,7 +32,9 @@ class UserTest extends TestCase
             ->assertJsonStructure([
                 'success',
                 'message',
-                'data' => ['access_token', 'token_type']
+                'data' => ['access_token', 'token_type', 'user' => [
+                    'name', 'email', 'created_at', 'updated_at'
+                ]]
             ]);
     }
 
