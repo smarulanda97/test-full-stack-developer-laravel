@@ -33,6 +33,7 @@ You can find the APP within the following folder:
 The development server of this application is powered by Laravel Sail. To start the development server ensure you have 
 free the ports 8080 and 3306 in your local machine
 
+- Clone this repository and move to project folder: `git clone git@github.com:smarulanda97/test-full-stack-developer-laravel.git && cd test-full-stack-developer-laravel`
 - Start app server and database with laravel sail: `./vendor/bin/sail up -d`
 - Install composer dependencies: `./vendor/bin/sail composer install`
 - Generate JWT secret key: `./vendor/bin/sail artisan jwt:secret`
