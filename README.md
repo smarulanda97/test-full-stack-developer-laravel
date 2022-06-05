@@ -33,7 +33,7 @@ You can find the APP within the following folder:
 - Docker
 
 ## Installation process
-``
+
 The development server of this application is powered by Laravel Sail. To start the development server ensure you have 
 free the ports 8080 and 3306 in your local machine
 
