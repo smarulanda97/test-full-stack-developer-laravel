@@ -1,7 +1,10 @@
 import { Link    } from 'react-router-dom';
+import {useAuth} from "../hooks/useAuth";
 
 function Layout({ children }) {
-    return (
+    const { userIsLoggedIn, handleLogout } = useAuth();
+
+     return (
         <>
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg ">
                 <div className="container-fluid">
@@ -30,15 +33,18 @@ function Layout({ children }) {
                             <li className="nav-item">
                                 <Link className="nav-link active" to="/">Quotation</Link>
                             </li>
-
-                            <li className="nav-item ms-4" id="login-link">
-                                <Link className="btn btn-sm btn-outline-primary my-1" to="/user/login">Login</Link>
+                            <li className="nav-item ms-4">
+                                {!userIsLoggedIn ? (
+                                    <Link className="btn btn-sm btn-outline-primary my-1" to="/user/login">Login</Link>
+                                ) : (
+                                    <button className="btn btn-sm btn-outline-danger my-1" onClick={handleLogout}>Logout</button>
+                                )}
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <main className="container">
+            <main className="container my-5">
                 {children}
             </main>
         </>
