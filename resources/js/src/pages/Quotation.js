@@ -1,9 +1,10 @@
 import Layout from "../components/Layout";
+import QuotationForm from "../components/QuotationForm";
 
 const Quotation = () => {
     return (
         <Layout>
-            <h1>Quotation</h1>
+            <QuotationForm />
         </Layout>
     )
 }

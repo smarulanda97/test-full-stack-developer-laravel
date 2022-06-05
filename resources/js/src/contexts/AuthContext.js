@@ -51,7 +51,7 @@ export function AuthProvider({ children }) {
     const handleLogout = async () => {
         setLoading(true);
         try {
-            await authApi.logoutService(accessToken);
+            await authApi.logoutService();
             setUser(removePersistedUser());
             setAccessToken(removePersistedAccessToken());
 
