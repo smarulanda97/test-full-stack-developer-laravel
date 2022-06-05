@@ -38,6 +38,7 @@ free the ports 8080 and 3306 in your local machine
 - Generate JWT secret key: `./vendor/bin/sail artisan jwt:secret`
 - Generate certificate for JWT: `./vendor/bin/sail artisan jwt:generate-certs`
 - Run migrations: `./vendor/bin/sail artisan migrate`
+- Run database seeder: `./vendor/bin/sail artisan db:seed`
 - Run fronted app `./vendor/bin/sail npm install && ./vendor/bin/sail npm run production`
 
 ## How to use the application (IMPORTANT!)
