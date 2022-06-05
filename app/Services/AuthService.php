@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Traits\StandardizedResponse;
@@ -24,6 +25,7 @@ class AuthService {
         return $this->responseJson([
             'token_type' => 'bearer',
             'access_token' => Auth::user()->createToken('authToken')->accessToken,
+            'user' => new UserResource(Auth::user())
         ], 200, 'Login successful');
     }
 
